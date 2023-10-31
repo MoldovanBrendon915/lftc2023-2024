@@ -1,0 +1,82 @@
+p1 - compute the max of 3 numbers
+VAR
+ a: INTEGER;
+b:INTEGER;
+c:INTEGER;
+BEGIN
+ READ(a);
+ READ(b);
+ READ(c);
+ IF a >= b AND a >= c THEN // if a is greater than b and c
+ WRITE(a);
+ ELSE IF b >= a AND b >= c THEN // if b is greater then a and c
+ WRITE(b);
+ ELSE // else - if c is greater than a and b
+ WRITE(c);
+ ENDIF;
+END
+
+----------------------------------------------------------------------
+p2 - check if a number is prime
+VAR
+ num INTEGER;
+ i : INTEGER;
+isPrime : INTEGER;
+BEGIN
+ READ(num);
+ isPrime := 1; //assume it's prime until proven otherwise
+ IF num <= 1 THEN
+ isPrime := 0; // 0 and 1 are not prime
+ ELSE
+i :=2;
+WHILE i<num DO
+
+ IF num % i = 0 THEN
+ isPrime := 0; // it's not prime if we find a divisor
+ EXIT; //stop checking if we find a divisor
+ ENDIF;
+ i := i+1
+ ENDWHILE;
+ ENDIF;
+ IF isPrime = 1 THEN
+ WRITE "Prime";
+ ELSE
+ WRITE "Not Prime";
+ ENDIF;
+END
+
+--------------------------------------------------------------------
+p3 - sum of n numbers, max of n numbers
+VAR
+ n: INTEGER;
+i: INTEGER;
+num:INTEGER;
+sum:INTEGER;
+max:INTEGER;
+BEGIN
+ READ(n);
+ sum := 0;
+i :=1;
+WHILE i<=n DO
+ FOR i := 1 TO n DO
+ READ(num);
+ sum := sum + num;
+ IF i = 1 OR num > max THEN
+ max := num;
+ ENDIF;
+ i :=i+1
+ ENDWHILE;
+ WRITE("Sum: ", sum);
+WRITE(sum);
+ WRITE("Max: ", max);
+Write (max)
+END
+
+----------------------------------------------------------------
+p1err - errors
+
+VAR
+ 21sfad, 2asd: INTEGER; // Lexical error - Identifier cannot start with a digit.
+BEGIN
+ READ(asd);// error – invalid identifier
+END
