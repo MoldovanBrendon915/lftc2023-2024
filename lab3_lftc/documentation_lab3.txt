@@ -1,0 +1,33 @@
+This program is a simple scanner or lexer for a programming language. Its purpose is to analyze the input program and identify various tokens, such as identifiers, constants, operators, separators, and reserved words. Additionally, it creates a Symbol Table (ST) and a Program Internal Form (PIF) to keep track of the identified tokens and their corresponding information.
+
+
+Token Types and Patterns:
+
+TOKEN_IDENTIFIER, TOKEN_INTCONST, TOKEN_CHARCONST, TOKEN_STRINGCONST, TOKEN_OPERATOR, TOKEN_SEPARATOR, TOKEN_RESERVED_WORD: These constants represent different types of tokens in the programming language.
+token_patterns: This list contains tuples, where each tuple consists of a token type and a regular expression pattern to match that type.
+Symbol Table (SortedST class):
+
+SortedST is a class representing a sorted symbol table. It has methods to insert, search, delete, get size, and retrieve keys.
+__init__: Initializes an empty table.
+insert: Inserts a key-value pair into the table and sorts it based on keys.
+searchKey: Searches for a key in the table and returns its corresponding value.
+delete: Deletes an entry with a specified key from the table.
+size: Returns the size of the table.
+keys: Returns a list of keys in the table.
+Tokenization Functions (tokenize_program and tokenize_line):
+
+tokenize_program: Takes a program as input and tokenizes it by calling tokenize_line for each line. It keeps track of line numbers.
+tokenize_line: Tokenizes a single line of code based on the provided patterns. It identifies and categorizes tokens and handles lexical errors.
+Reserved Words Function (get_reserved_words):
+
+get_reserved_words: Returns a list of reserved words in the programming language.
+Main Execution (__main__ block):
+
+A sample program is provided as a string.
+An instance of SortedST (st) is created.
+The program is tokenized using the tokenize_program function, and the resulting tokens are stored in the tokens list.
+The program then iterates through the tokens, and for each identifier or reserved word, it inserts the token into the Symbol Table.
+The Symbol Table is then outputted to a file named "ST.out," showing each key (identifier or reserved word) and the line where it is defined.
+The Program Internal Form (PIF) is outputted to a file named "PIF.out," showing each token type, token value, and the line number where it occurs.
+
+
